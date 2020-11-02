@@ -1,0 +1,43 @@
+.container-home {
+    display: flex!important;
+    //align-items: center;
+    width: 100%;
+    height: 80vh;
+  }
+  
+  input[type="file"] {
+    position: absolute;
+    z-index: -1;
+    top: 6px;
+    left: 0px;
+    font-size: 15px;
+    color: rgb(153,153,153);
+  }
+  
+  .button-wrap {
+    position: relative;
+  }
+  
+  .new-button {
+      //position:relative;
+      display: inline-block;
+      padding: 15px 50px; 
+      cursor: pointer;
+      border-radius: 4px;
+      background-color: #9c27b0;
+      font-size: 16px;
+      color: #fff;
+  }
+  .file-text{
+    position: relative;
+    left: 200px;
+    bottom: 40px;
+    font-size: 14px;
+    font-weight: 500;
+
+  }
+  .list{
+    display:flex;
+    font-size: 14px;
+    font-weight: 500;
+  }

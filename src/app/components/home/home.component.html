@@ -1,0 +1,30 @@
+<div class="contianer-home">
+        <div class="button-wrap">
+            <label class ="new-button" for="upload"> Upload File
+                <input  (change)="onChange($event)" id="upload" type="file" >
+            </label>
+        </div>
+        <div class="file-text">{{fileName}}</div>  
+</div> 
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">UserId</th>
+        <th scope="col">Title</th>
+        <th scope="col">Body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of dataList">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.userId}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.body}}</td>
+      </tr>
+    </tbody>
+  </table>
+ 
+   
+    
