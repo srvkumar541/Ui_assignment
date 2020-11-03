@@ -11,7 +11,7 @@ import { UserService } from './user.service';
 export class AppComponent implements OnInit {
   
   constructor(private router: Router,
-              private userService:UserService
+              public userService:UserService
               ){
               }
   ngOnInit(){}

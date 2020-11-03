@@ -31,7 +31,13 @@ export class HomeComponent implements OnInit {
         
     // Store form name as "file" with file data 
     formData.append("file", this.file, this.file.name); 
-    console.log(this.file.name);
+    this.userService.fileUpload(formData)
+      .subscribe(data =>{
+        console.log(data);
+      },
+      error =>{
+        console.log(error)
+      })
 } 
 
 getData(){
