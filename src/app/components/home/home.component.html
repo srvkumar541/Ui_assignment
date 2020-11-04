@@ -8,13 +8,13 @@
           <a [href]=this.imageURL target="_blank">{{fileName}}</a> 
         </div>  
 </div>
-<div>
+<div *ngIf = "loader">
   <h3>File Content</h3>
-  <pre> {{fileContent}} </pre>
+  <!-- <pre> {{fileContent}} </pre> -->
 </div>
 
 
-<!-- <table class="table">
+<table *ngIf = "loader" class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -31,7 +31,7 @@
         <td>{{item.body}}</td>
       </tr>
     </tbody>
-  </table> -->
+  </table>
  
    
     

@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   loader: boolean = false;
   message: string;
   imageURL: string;
-  fileContent: string = '';
+  fileContent;
 
   constructor( private router: Router,
               private userService:UserService) { }
@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
     let fileReader: FileReader = new FileReader();
     let self = this;
     fileReader.onloadend = function(x) {
-      self.fileContent = fileReader.result;
+      self.fileContent = JSON.parse(fileReader.result);
     }
     fileReader.readAsText(file);
   }
