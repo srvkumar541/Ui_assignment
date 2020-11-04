@@ -4,8 +4,11 @@
                 <input  (change)="onChange($event)" id="upload" type="file" >
             </label>
         </div>
-        <div class="file-text">{{fileName}}</div>  
-</div> 
+        <div class="file-text">
+          <a [href]=this.imageURL target="_blank">{{fileName}}</a> 
+        </div>  
+</div>
+
 
 <table class="table">
     <thead>

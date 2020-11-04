@@ -8,11 +8,13 @@ import { UserService } from 'src/app/user.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  server_path=  'http://127.0.0.1:8000'
   file: File = null; // Variable to store file
   fileName = ''
   dataList = [];
-  loader: boolean = true;
+  loader: boolean = false;
   message: string;
+  imageURL: string;
 
   constructor( private router: Router,
               private userService:UserService) { }
@@ -33,7 +35,9 @@ export class HomeComponent implements OnInit {
     formData.append("file", this.file, this.file.name); 
     this.userService.fileUpload(formData)
       .subscribe(data =>{
-        console.log(data);
+        this.imageURL = `${this.server_path}${data.file}`;
+        console.log(this.imageURL);
+        this.loader = true;
       },
       error =>{
         console.log(error)
