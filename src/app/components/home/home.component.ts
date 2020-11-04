@@ -15,12 +15,13 @@ export class HomeComponent implements OnInit {
   loader: boolean = false;
   message: string;
   imageURL: string;
+  fileContent: string = '';
 
   constructor( private router: Router,
               private userService:UserService) { }
 
   ngOnInit(): void {
-    this.getData();
+    //this.getData();
   }
   
  
@@ -44,13 +45,24 @@ export class HomeComponent implements OnInit {
       })
 } 
 
-getData(){
-  this.userService.getData().subscribe(data =>{
-    this.dataList = data;
-    console.log(this.dataList)
-  },
-  error => console.log(error)
-  )
-}
+// getData(){
+//   this.userService.getData().subscribe(data =>{
+//     this.dataList = data;
+//     console.log(this.dataList)
+//   },
+//   error => console.log(error)
+//   )
+// }
+
+
+  public getData(fileList: FileList): void {
+    let file = fileList[0];
+    let fileReader: FileReader = new FileReader();
+    let self = this;
+    fileReader.onloadend = function(x) {
+      self.fileContent = fileReader.result;
+    }
+    fileReader.readAsText(file);
+  }
 
 }

@@ -1,12 +1,16 @@
 <div class="contianer-home">
         <div class="button-wrap">
             <label class ="new-button" for="upload"> Upload File
-                <input  (change)="onChange($event)" id="upload" type="file" >
+                <input  (change)="onChange($event); getData($event.target.files)" id="upload" type="file" accept="application/JSON">
             </label>
         </div>
         <div class="file-text">
           <a [href]=this.imageURL target="_blank">{{fileName}}</a> 
         </div>  
+</div>
+<div>
+  <h3>File Content</h3>
+  <pre> {{fileContent}} </pre>
 </div>
 
 
@@ -20,7 +24,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of dataList">
+      <tr *ngFor="let item of fileContent">
         <th scope="row">{{item.id}}</th>
         <td>{{item.userId}}</td>
         <td>{{item.title}}</td>
